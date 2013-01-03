@@ -9,7 +9,7 @@ cookie_options(_HandlerState) ->
    [{path, <<"/">>}].
 
 generate() ->
-   ossp_uuid:make(v4, text).
+   list_to_binary(uuid:to_string(uuid:uuid4())).
 
 session_name(Session) ->
    Session.
